@@ -6,7 +6,6 @@ mod mips_parser;
 mod memory;
 
 use mips_parser::*;
-use memory::read_component_list_to_state;
 
 fn main() {
     println!("==================================================");
@@ -23,14 +22,5 @@ fn main() {
 
     let component_list = read_file_to_state(&args[0]).unwrap(); 
 
-    let memory_rep;
-    {
-        memory_rep = read_component_list_to_state(&mut component_list);
-    }
-
-    let (label_hash, code_rep);
-    {
-        (label_hash, code_rep) = (None, None);
-    }
 }
 
