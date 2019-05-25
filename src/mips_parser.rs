@@ -116,7 +116,7 @@ mod tests {
     }
 
     #[test]
-    fn test_parse_line_to_parts() {
+    fn test_parse_line_to_parts_label() {
         compare_results(
             parse_line_to_component(&"label: ".to_string()).unwrap(),
             vec![
@@ -136,8 +136,10 @@ mod tests {
                 }),
             ]
         );
-
-
+    }
+    
+    #[test]
+    fn test_parse_line_to_parts_directive() {
         compare_results(
             parse_line_to_component(&".directive".to_string()).unwrap(),
             vec![
@@ -156,8 +158,10 @@ mod tests {
                 }),
             ]
         );
-        
-        
+    }
+    
+    #[test]
+    fn test_parse_line_to_parts_label_directive() {
         compare_results(
             parse_line_to_component(&"label:    \t .directive".to_string()).unwrap(),
             vec![
@@ -194,8 +198,10 @@ mod tests {
                 }),
             ]
         );
-
-
+    }
+    
+    #[test]
+    fn test_parse_line_to_parts_assembly() {
         compare_results(
             parse_line_to_component(&"asm".to_string()).unwrap(),
             vec![
@@ -214,8 +220,10 @@ mod tests {
                 }),
             ]
         );
-       
-
+    }
+    
+    #[test]
+    fn test_parse_line_to_parts_label_assembly() {
         compare_results(
             parse_line_to_component(&"label:    \t asm".to_string()).unwrap(),
             vec![
