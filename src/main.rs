@@ -4,8 +4,11 @@ mod utils;
 
 mod mips_parser;
 mod memory;
+mod runtime;
 
 use mips_parser::*;
+use runtime::*;
+use memory::*;
 
 fn main() {
     println!("==================================================");
